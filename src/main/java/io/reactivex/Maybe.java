@@ -2192,6 +2192,9 @@ public abstract class Maybe<T> implements MaybeSource<T> {
     /**
      * Returns a Maybe that emits the item emitted by the source Maybe or a specified default item
      * if the source Maybe is empty.
+     * <p>Note that the result Maybe is semantically equivalent to a Single, since it's guaranteed to emit exactly one item (or an error).
+     * This method has Maybe return type for consistency with Flowable and Observable methods of the same name.
+     * See {@link #toSingle(Object)} for a method with equivalent behavior which returns a Single.
      * <p>
      * <img width="640" height="305" src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/defaultIfEmpty.png" alt="">
      * <dl>
